@@ -12,15 +12,14 @@ count: false
 
 September 6th, 2022
 
-<!-- ---
+---
 # Talk information
 <br><br>
 
-- .bold[talk time]: .bold[15 minute] presentation on pyhf
-   - .bold[12 minutes] talk
+- .bold[talk time]: .bold[18 minute] presentation on pyhf
+   - .bold[15 minutes] talk
    - .bold[3 minutes] questions
-- .bold[talk upload]: The only accepted formats for the slides are pdf (preferred) or pptx, any other format is strictly
-forbidden. The files must be uploaded to the Indico platform of the conference .bold[before 6 pm of the day before the talk], no other method of submission will be allowed. -->
+- .bold[talk request]: For the "New ML approaches" session in the spirit of how ML developments have helped us improve the physics we're able to do we'd like to invite you to give a talk on phyf, any recent developments, and how HDBS analyses can use it for better physics.
 
 ---
 # `pyhf` team
