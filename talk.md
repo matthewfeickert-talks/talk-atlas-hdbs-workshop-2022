@@ -8,9 +8,9 @@ count: false
 <br><br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 
-[International Conference on High Energy Physics (ICHEP) 2022](https://agenda.infn.it/event/28874/contributions/169217/)
+[ATLAS HDBS Workshop 2022](https://indico.cern.ch/event/1132691/contributions/4994710/)
 
-July 8th, 2022
+September 6th, 2022
 
 <!-- ---
 # Talk information
