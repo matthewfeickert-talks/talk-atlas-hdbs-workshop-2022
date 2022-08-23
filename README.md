@@ -2,7 +2,7 @@
 
 Talk given at the [ATLAS HDBS workshop 2022](https://indico.cern.ch/event/1132691/).
 
-Viewable online [here](https://matthewfeickert.github.io/talk-atlas-hdbs-workshop-2022/index.html).
+Viewable online [here](https://matthewfeickert-talks.github.io/talk-atlas-hdbs-workshop-2022/index.html).
 
 ## Acknowledgments
 
