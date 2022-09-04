@@ -1,5 +1,5 @@
 pyhf[jax]==0.6.3
-jsonschema<4.15.0
+jsonschema<=4.14.0  # 4.15.0+ causes API problem with pyhf v0.6.3
 sympy==1.11.1
 matplotlib==3.5.3
 pre-commit
