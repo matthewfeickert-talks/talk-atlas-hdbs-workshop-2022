@@ -451,7 +451,7 @@ $$
 # New Art: Analysis as a Differentiable Program
 .kol-1-2[
 - Extend `pyhf` to be fully end-to-end differentiable (future `pyhf` goal)
-- Possibilities with [`neos`][neos-github] (c.f. [Nathan Simpson's talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
+- Possibilities with [`neos`][neos-github] and [`relaxed`][relaxed-github] (c.f. [Nathan Simpson's talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
    - Provide differentiable analogue to histograms with kernel density estimation (KDE) or softmax
       - Need smooth change compared to abrupt changes in binned yields
    <!-- - Make profile-likelihood differentiable with [fixed-point differentiation](https://implicit-layers-tutorial.org/implicit_functions/) -->
@@ -466,6 +466,7 @@ $$
 ]
 
 [neos-github]: https://github.com/gradhep/neos
+[relaxed-github]: https://github.com/gradhep/relaxed
 
 ---
 # Differentiable Ecosystem
