@@ -345,6 +345,17 @@ $$
       - [`pyhf-combine-converter`](https://pypi.org/project/pyhf-combine-converter/)
 ]
 
+---
+# Large community adoption followed (2020 on)
+<!-- Following the validation and publication of the first full probabiliyt model, there has been a large uptick in community adoption since 2020.
+This slide shows a collection of the 32 use citations that pyhf has recieved from a variety of theory and experiment papers and publications,
+including several ATLAS publications and a publication from Belle II.
+This has been exciting to see as we feel that having open community tooling across theory and experiment is important for clear communication.
+-->
+.center[
+.width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
+]
+
 <!-- pyhf support multiple tensor libraries like NumPy, PyTorch, TensorFlow, and JAX as computational backends to impliment n-dimensional
 array operations through a common API.
 These last three are machine learning libraries and allow for explotation of automatic differentiaion and hardware acceleration.
@@ -388,7 +399,7 @@ But there are instances that we've seen for large complex models where the time 
 been automatic differentiation of the likelihood. The computational backends are able to setup a computational grpah that can propagate the
 gradient through the full calculation which then can provide the full graidnent to modern optimizers which can significantly speed up fits.-->
 ---
-# Automatic differentiation
+# Automatic differentiation of pyhf Models
 
 With tensor library backends gain access to _exact (higher order) derivatives_ &mdash; accuracy is only limited by floating point precision
 
@@ -407,6 +418,54 @@ $$
 .center.width-80[![DAG](figures/computational_graph.png)]
 ]
 ]
+
+---
+# HEP Example: Likelihood Gradients
+
+.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
+
+.kol-1-2.center[
+.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
+]
+.kol-1-2.center[
+.width-90[![MLE_grad_map_full](figures/MLE_grad_map_full.png)]
+]
+
+.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
+
+---
+# HEP Example: Likelihood Gradients
+
+.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
+
+.kol-1-2.center[
+.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
+]
+.kol-1-2.center[
+.width-90[![MLE_grad_map_full](figures/MLE_grad_map.png)]
+]
+
+.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
+
+---
+# New Art: Analysis as a Differentiable Program
+.kol-1-2[
+- Extend `pyhf` to be fully end-to-end differentiable (future `pyhf` goal)
+- Possibilities with [`neos`][neos-github] (c.f. [Nathan Simpson's talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
+   - Provide differentiable analogue to histograms with kernel density estimation (KDE) or softmax
+      - Need smooth change compared to abrupt changes in binned yields
+   <!-- - Make profile-likelihood differentiable with [fixed-point differentiation](https://implicit-layers-tutorial.org/implicit_functions/) -->
+   - Samples fed into NN that produces observable (NN output) KDE transformed and histogrammed.
+   - Construct `pyhf` model with observable and perform inference to get $\mathrm{CL}_{s}$ for POI.
+   - Backpropagate the $\mathrm{CL}_{s}$ to update weights for NN.
+
+.center.width-35[[![neos_logo](https://raw.githubusercontent.com/gradhep/neos/master/nbs/assets/neos_logo.png)][neos-github]]
+]
+.kol-1-2[
+.center.width-100[[![neoflow](figures/neoflow.png)](https://indico.cern.ch/event/882824/timetable/#46-neos-physics-analysis-as-a)]
+]
+
+[neos-github]: https://github.com/gradhep/neos
 
 <!-- Another important feature about pyhf is that the model specification is in JSON.
 This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
@@ -455,45 +514,6 @@ publish 22 full probabiliy models.-->
 .kol-1-2[
 .center.width-100[[![CERN_news_story](figures/CERN_news_story.png)](https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way)]
 .center[(CERN, 2020)]
-]
-
----
-# HEP Example: Likelihood Gradients
-
-.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
-
-.kol-1-2.center[
-.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
-]
-.kol-1-2.center[
-.width-90[![MLE_grad_map_full](figures/MLE_grad_map_full.png)]
-]
-
-.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
-
----
-# HEP Example: Likelihood Gradients
-
-.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
-
-.kol-1-2.center[
-.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
-]
-.kol-1-2.center[
-.width-90[![MLE_grad_map_full](figures/MLE_grad_map.png)]
-]
-
-.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
-
----
-# Large community adoption followed (2020 on)
-<!-- Following the validation and publication of the first full probabiliyt model, there has been a large uptick in community adoption since 2020.
-This slide shows a collection of the 32 use citations that pyhf has recieved from a variety of theory and experiment papers and publications,
-including several ATLAS publications and a publication from Belle II.
-This has been exciting to see as we feel that having open community tooling across theory and experiment is important for clear communication.
--->
-.center[
-.width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
 ]
 
 <!-- Focusing on this idea of community use and involvement, it is important to emphasize that pyhf is a **library** focused on modeling

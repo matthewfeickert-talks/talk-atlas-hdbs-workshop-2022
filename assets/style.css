@@ -441,6 +441,10 @@ td {
     vertical-align: middle;
 }
 
+.focus-slide {
+    vertical-align: middle;
+}
+
 .end-slide {
     background-color: #20707e;
     color: white;
