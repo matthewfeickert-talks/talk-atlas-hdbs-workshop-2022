@@ -467,6 +467,37 @@ $$
 
 [neos-github]: https://github.com/gradhep/neos
 
+---
+# Differentiable Ecosystem
+
+.kol-1-4.center[
+.width-100[[![gradhep](https://avatars1.githubusercontent.com/u/65067820)](https://hepsoftwarefoundation.org/activities/differentiablecomputing.html)]
+
+[gradhep](https://hepsoftwarefoundation.org/activities/differentiablecomputing.html)
+]
+.kol-1-4.center[
+.width-100[[![neos_logo](https://raw.githubusercontent.com/gradhep/neos/master/nbs/assets/neos_logo.png)][neos-github]]
+
+[neos][neos-github], [INFERNO](https://inspirehep.net/literature/1677673)
+]
+.kol-1-4.center[
+.width-100[[![madjax_logo](figures/madjax_logo.png)](https://github.com/madjax-hep/madjax)]
+
+[madjax](https://github.com/madjax-hep/madjax)
+]
+.kol-1-4.center[
+<br><br>
+.width-100[[![Acts_autodiff_talk](figures/Acts_autodiff_talk.png)](https://indico.cern.ch/event/941278/contributions/4084835/)]
+
+<br><br>
+[ACTS](https://iris-hep.org/projects/acts.html)
+]
+
+<br><br>
+.kol-1-1[
+.bold.center[Groups, libraries, and applications growing rapidly]
+]
+
 <!-- Another important feature about pyhf is that the model specification is in JSON.
 This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
 heat death of the Universe we have long term support baked in as well.
