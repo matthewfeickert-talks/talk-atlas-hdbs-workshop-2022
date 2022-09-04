@@ -1,4 +1,4 @@
-# [`pyhf`: pure-Python implementation of HistFactory with tensors and automatic differentiation](https://indico.cern.ch/event/1132691/contributions/4994710/)
+# [`pyhf` and thoughts on analysis optimization with automatic differentiation](https://indico.cern.ch/event/1132691/contributions/4994710/)
 
 Talk given at the [ATLAS HDBS workshop 2022](https://indico.cern.ch/event/1132691/).
 
