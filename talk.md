@@ -226,7 +226,7 @@ $$
   - [`$ python -m pip install --pre pyhf`](https://scikit-hep.org/pyhf/installation.html#install-from-pypi)
   - No dependence on ROOT!
 
-.center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI_rc.png)](https://pypi.org/project/pyhf/0.7.0rc1/)]
+.center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI_rc.png)](https://pypi.org/project/pyhf/0.7.0rc3/)]
 ]
 .kol-1-2.large[
 - Open source tool for all of HEP
