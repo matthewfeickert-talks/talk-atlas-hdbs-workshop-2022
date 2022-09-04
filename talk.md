@@ -78,9 +78,114 @@ Provide constraints on models through setting best limits
 ]
 
 - All require .bold[building statistical models] and .bold[fitting models] to data to perform statistical inference
-- Model complexity can be huge for complicated searches
-- **Problem:** Time to fit can be .bold[many hours]
+- Model complexity can be huge for complicated searches (hundreds of parameters + systematics)
+- **Problem:** Time to fit can be .bold[literally days] (for MLE fits, worse if pseudoexperiments required)
 - .blue[Goal:] Empower analysts with fast fits and expressive models
+
+---
+# Gradients as Computational Tools
+
+- As we'll see later, having access to the gradient while performing minimization is highly beneficial!
+- Can imagine multiple ways of arriving at gradients for computational functions
+   - But want them to be both .bold[exact] and .bold[flexible]
+
+.center.width-25[![carbon_f_x](figures/carbon_f_x.png)]
+.kol-6-8[
+.bold.center[Symbolic]
+.center.width-100[![carbon_fprime_symbolic](figures/carbon_fprime_symbolic.png)]
+]
+.kol-2-8[
+<br><br>
+- Exact: .blue[Yes]
+- Flexible: .red[No]
+]
+
+---
+# Gradients as Computational Tools
+
+- As we'll see later, having access to the gradient while performing minimization is highly beneficial!
+- Can imagine multiple ways of arriving at gradients for computational functions
+   - But want them to be both .bold[exact] and .bold[flexible]
+
+.center.width-25[![carbon_f_x](figures/carbon_f_x.png)]
+.kol-6-8[
+.bold.center[Numeric]
+.center.width-70[![carbon_fprime_numeric](figures/carbon_fprime_numeric.png)]
+]
+.kol-2-8[
+<br><br>
+- Exact: .red[No]
+- Flexible: .blue[Yes]
+]
+
+---
+# Gradients as Computational Tools
+
+- As we'll see later, having access to the gradient while performing minimization is highly beneficial!
+- Can imagine multiple ways of arriving at gradients for computational functions
+   - But want them to be both .bold[exact] and .bold[flexible]
+
+.center.width-25[![carbon_f_x](figures/carbon_f_x.png)]
+.kol-6-8[
+.bold.center[Automatic]
+.center.width-80[![carbon_fprime_automatic](figures/carbon_fprime_automatic.png)]
+]
+.kol-2-8[
+<br><br>
+- Exact: .blue[Yes]
+- Flexible: .blue[Yes]
+]
+
+---
+# Automatic Differentiation
+
+.kol-3-5[
+- Automatic differentiation (autodiff) provides gradients of numerical functions to machine precision
+- Build computational graph of the calculation
+- Nodes represent operations, edges represent flow of gradients
+- Apply the chain rule to operations
+   - Can traverse the graph in forward or reverse modes depending on the relative dimensions of input and output for efficient computation
+
+$$
+f(a,b) = a^{2} \sin(ab)
+$$
+<br>
+$$
+\frac{df}{da} = \frac{\partial c}{\partial a} \frac{\partial f}{\partial c} + \frac{\partial d}{\partial a} \frac{\partial e}{\partial d} \frac{\partial f}{\partial e}
+$$
+
+<!-- TODO: Revise example with graphviz -->
+]
+.kol-2-5.center[
+.width-100[[![autodiff_graph](figures/autodiff_graph.png)](https://indico.cern.ch/event/941278/contributions/4084835/)]
+]
+
+---
+# Differentiable Programming
+
+<br>
+
+.grid[
+.kol-1-2[
+- Allows writing fully differentiable programs that are efficient and accurate
+- Resulting system can be optimized end-to-end using efficient gradient-based optimization algorithms
+   - Exploit advances in deep learning
+- Enables .italic[efficient] computation of gradients and Jacobians
+   - Large benefit to statistical inference
+- Replace non-differentiable operations with differentiable analogues
+   - Binning, sorting, cuts
+]
+.kol-1-2[
+.center.width-100[[![Snowmass_LOI](figures/Snowmass_LOI.png)](https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF5_CompF3_Gordon_Watts-046.pdf)]
+.center[[Snowmass 2021 LOI](https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF5_CompF3_Gordon_Watts-046.pdf)]
+]
+]
+
+---
+class: focus-slide, center
+# Case study: Autodiff improving analyses
+
+.huge.bold.center[Application of autodiff in `pyhf`]
 
 ---
 # HistFactory Model
@@ -389,105 +494,6 @@ This has been exciting to see as we feel that having open community tooling acro
 -->
 .center[
 .width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
-]
-
----
-# Gradients as Computational Tools
-
-- As we'll see later, having access to the gradient while performing minimization is highly beneficial!
-- Can imagine multiple ways of arriving at gradients for computational functions
-   - But want them to be both .bold[exact] and .bold[flexible]
-
-.center.width-25[![carbon_f_x](figures/carbon_f_x.png)]
-.kol-6-8[
-.bold.center[Symbolic]
-.center.width-100[![carbon_fprime_symbolic](figures/carbon_fprime_symbolic.png)]
-]
-.kol-2-8[
-<br><br>
-- Exact: .blue[Yes]
-- Flexible: .red[No]
-]
-
----
-# Gradients as Computational Tools
-
-- As we'll see later, having access to the gradient while performing minimization is highly beneficial!
-- Can imagine multiple ways of arriving at gradients for computational functions
-   - But want them to be both .bold[exact] and .bold[flexible]
-
-.center.width-25[![carbon_f_x](figures/carbon_f_x.png)]
-.kol-6-8[
-.bold.center[Numeric]
-.center.width-70[![carbon_fprime_numeric](figures/carbon_fprime_numeric.png)]
-]
-.kol-2-8[
-<br><br>
-- Exact: .red[No]
-- Flexible: .blue[Yes]
-]
-
----
-# Gradients as Computational Tools
-
-- As we'll see later, having access to the gradient while performing minimization is highly beneficial!
-- Can imagine multiple ways of arriving at gradients for computational functions
-   - But want them to be both .bold[exact] and .bold[flexible]
-
-.center.width-25[![carbon_f_x](figures/carbon_f_x.png)]
-.kol-6-8[
-.bold.center[Automatic]
-.center.width-80[![carbon_fprime_automatic](figures/carbon_fprime_automatic.png)]
-]
-.kol-2-8[
-<br><br>
-- Exact: .blue[Yes]
-- Flexible: .blue[Yes]
-]
-
----
-# Automatic Differentiation
-
-.kol-3-5[
-- Automatic differentiation (autodiff) provides gradients of numerical functions to machine precision
-- Build computational graph of the calculation
-- Nodes represent operations, edges represent flow of gradients
-- Apply the chain rule to operations
-   - Can traverse the graph in forward or reverse modes depending on the relative dimensions of input and output for efficient computation
-
-$$
-f(a,b) = a^{2} \sin(ab)
-$$
-<br>
-$$
-\frac{df}{da} = \frac{\partial c}{\partial a} \frac{\partial f}{\partial c} + \frac{\partial d}{\partial a} \frac{\partial e}{\partial d} \frac{\partial f}{\partial e}
-$$
-
-<!-- TODO: Revise example with graphviz -->
-]
-.kol-2-5.center[
-.width-100[[![autodiff_graph](figures/autodiff_graph.png)](https://indico.cern.ch/event/941278/contributions/4084835/)]
-]
-
----
-# Differentiable Programming
-
-<br>
-
-.grid[
-.kol-1-2[
-- Allows writing fully differentiable programs that are efficient and accurate
-- Resulting system can be optimized end-to-end using efficient gradient-based optimization algorithms
-   - Exploit advances in deep learning
-- Enables .italic[efficient] computation of gradients and Jacobians
-   - Large benefit to statistical inference
-- Replace non-differentiable operations with differentiable analogues
-   - Binning, sorting, cuts
-]
-.kol-1-2[
-.center.width-100[[![Snowmass_LOI](figures/Snowmass_LOI.png)](https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF5_CompF3_Gordon_Watts-046.pdf)]
-.center[[Snowmass 2021 LOI](https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF5_CompF3_Gordon_Watts-046.pdf)]
-]
 ]
 
 <!-- Focusing on this idea of community use and involvement, it is important to emphasize that pyhf is a **library** focused on modeling
