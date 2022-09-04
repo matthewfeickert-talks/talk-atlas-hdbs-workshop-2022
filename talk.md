@@ -211,7 +211,8 @@ $$
    - Used in ATLAS SUSY, Exotics, and Top groups in [22 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models) (inference and published models)
    - Used by Belle II<br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
    - Used in [analyses and for reinterpretation](https://scikit-hep.org/pyhf/citations.html#use-citations) by phenomenology community, `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793)), and `MadAnalysis 5` ([arXiv:2206.14870](https://inspirehep.net/literature/2103971))
-   - Ongoing [IRIS-HEP supported Fellow](https://iris-hep.org/fellows/peterridolfi.html) work to provide conversion support to CMS Combine as of Summer 2022!
+   - Summer 2022 [IRIS-HEP supported Fellow (Peter Ridolfi)](https://iris-hep.org/fellows/peterridolfi.html) project to provide conversion support to CMS Combine
+      - [`pyhf-combine-converter`](https://pypi.org/project/pyhf-combine-converter/)
 ]
 
 <!-- Same slide but with release candidate shown -->
@@ -233,7 +234,8 @@ $$
    - Used in ATLAS SUSY, Exotics, and Top groups in [22 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models) (inference and published models)
    - Used by Belle II<br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
    - Used in [analyses and for reinterpretation](https://scikit-hep.org/pyhf/citations.html#use-citations) by phenomenology community, `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793)), and `MadAnalysis 5` ([arXiv:2206.14870](https://inspirehep.net/literature/2103971))
-   - Ongoing [IRIS-HEP supported Fellow](https://iris-hep.org/fellows/peterridolfi.html) work to provide conversion support to CMS Combine as of Summer 2022!
+   - Summer 2022 [IRIS-HEP supported Fellow (Peter Ridolfi)](https://iris-hep.org/fellows/peterridolfi.html) project to provide conversion support to CMS Combine
+      - [`pyhf-combine-converter`](https://pypi.org/project/pyhf-combine-converter/)
 ]
 
 <!-- pyhf support multiple tensor libraries like NumPy, PyTorch, TensorFlow, and JAX as computational backends to impliment n-dimensional
