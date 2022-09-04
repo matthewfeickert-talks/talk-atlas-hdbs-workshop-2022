@@ -347,6 +347,34 @@ publish 22 full probabiliy models.-->
 ]
 
 ---
+# HEP Example: Likelihood Gradients
+
+.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
+
+.kol-1-2.center[
+.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
+]
+.kol-1-2.center[
+.width-90[![MLE_grad_map_full](figures/MLE_grad_map_full.png)]
+]
+
+.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
+
+---
+# HEP Example: Likelihood Gradients
+
+.footnote[Example adapted from [Lukas Heinrich's PyHEP 2020 tutorial](https://indico.cern.ch/event/882824/timetable/#45-introduction-to-automatic-d)]
+
+.kol-1-2.center[
+.width-90[![carbon_plot_MLE_grads](figures/carbon_plot_MLE_grads.png)]
+]
+.kol-1-2.center[
+.width-90[![MLE_grad_map_full](figures/MLE_grad_map.png)]
+]
+
+.bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
+
+---
 # Large community adoption followed (2020 on)
 <!-- Following the validation and publication of the first full probabiliyt model, there has been a large uptick in community adoption since 2020.
 This slide shows a collection of the 32 use citations that pyhf has recieved from a variety of theory and experiment papers and publications,
