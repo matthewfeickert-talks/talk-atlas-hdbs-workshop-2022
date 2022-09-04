@@ -448,6 +448,10 @@ $$
 .bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
 
 ---
+class: focus-slide, center
+# Extending and going further for HDBS
+
+---
 # New Art: Analysis as a Differentiable Program
 .kol-1-2[
 - Extend `pyhf` to be fully end-to-end differentiable (future `pyhf` goal)
@@ -499,54 +503,6 @@ $$
 .bold.center[Groups, libraries, and applications growing rapidly]
 ]
 
-<!-- Another important feature about pyhf is that the model specification is in JSON.
-This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
-heat death of the Universe we have long term support baked in as well.
-It is additionally parsable by every language, and so is highly portable and is easily versioned, compressed, and preserved.
-It can also be patched which allows for interesting applications in analysis reinterpretation.
-With pyhf's CLI API we also support bi-directional translations with ROOT. -->
----
-# JSON spec fully describes the HistFactory model
-
-.kol-1-4.width-100[
-- Human & machine readable .bold[declarative] statistical models
-- Industry standard
-   - Will be with us forever
-- Parsable by every language
-   - Highly portable
-   - Bidirectional translation <br>with ROOT
-- Versionable and easily preserved
-   - JSON Schema [describing<br> HistFactory specification](https://scikit-hep.org/pyhf/likelihood.html#bibliography)
-   - Attractive for analysis preservation
-   - Highly compressible
-]
-.kol-3-4.center[
-.width-105[![demo_JSON](figures/carbon_JSON_spec_annotated.png)]
-
-.center[[`JSON` defining a single channel, two bin counting experiment with systematics](https://scikit-hep.org/pyhf/likelihood.html#toy-example)]
-]
-
-<!-- Once pyhf was established and sufficiently feature complete, ATLAS released a PUB note in 2019 that validated it by reproducing
-a published SUSY search for bottom squarks to well within uncertanties.
-Using pyhf's JSON specification for HistFactory models ATLAS additionally published the full probability model for all mass hypotheses
-in the analysis to HEPData.
-This was the first full probabiliy model ever published by an LHC experiment, as noted in this CERN article from 2020, and ATLAS has now gone on to
-publish 22 full probabiliy models.-->
----
-# ATLAS validation and publication of models
-
-.kol-1-2[
-.center.width-100[[![ATLAS_PUB_Note_title](figures/ATLAS_PUB_Note_title.png)](https://cds.cern.ch/record/2684863)]
-
-.center.width-90[[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)]
-
-<br>
-.center[(ATLAS, 2019)]
-]
-.kol-1-2[
-.center.width-100[[![CERN_news_story](figures/CERN_news_story.png)](https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way)]
-.center[(CERN, 2020)]
-]
 
 <!-- Focusing on this idea of community use and involvement, it is important to emphasize that pyhf is a **library** focused on modeling
 and inference and not a framework. As part of the Scikit-HEP ecosystem, pyhf's API was designed to be extensible which has allowed for
@@ -729,6 +685,55 @@ class: middle
 class: end-slide, center
 
 Backup
+
+<!-- Another important feature about pyhf is that the model specification is in JSON.
+This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
+heat death of the Universe we have long term support baked in as well.
+It is additionally parsable by every language, and so is highly portable and is easily versioned, compressed, and preserved.
+It can also be patched which allows for interesting applications in analysis reinterpretation.
+With pyhf's CLI API we also support bi-directional translations with ROOT. -->
+---
+# JSON spec fully describes the HistFactory model
+
+.kol-1-4.width-100[
+- Human & machine readable .bold[declarative] statistical models
+- Industry standard
+   - Will be with us forever
+- Parsable by every language
+   - Highly portable
+   - Bidirectional translation <br>with ROOT
+- Versionable and easily preserved
+   - JSON Schema [describing<br> HistFactory specification](https://scikit-hep.org/pyhf/likelihood.html#bibliography)
+   - Attractive for analysis preservation
+   - Highly compressible
+]
+.kol-3-4.center[
+.width-105[![demo_JSON](figures/carbon_JSON_spec_annotated.png)]
+
+.center[[`JSON` defining a single channel, two bin counting experiment with systematics](https://scikit-hep.org/pyhf/likelihood.html#toy-example)]
+]
+
+<!-- Once pyhf was established and sufficiently feature complete, ATLAS released a PUB note in 2019 that validated it by reproducing
+a published SUSY search for bottom squarks to well within uncertanties.
+Using pyhf's JSON specification for HistFactory models ATLAS additionally published the full probability model for all mass hypotheses
+in the analysis to HEPData.
+This was the first full probabiliy model ever published by an LHC experiment, as noted in this CERN article from 2020, and ATLAS has now gone on to
+publish 22 full probabiliy models.-->
+---
+# ATLAS validation and publication of models
+
+.kol-1-2[
+.center.width-100[[![ATLAS_PUB_Note_title](figures/ATLAS_PUB_Note_title.png)](https://cds.cern.ch/record/2684863)]
+
+.center.width-90[[![overlay_multiplex_contour](figures/overlay_multiplex_contour.png)](https://cds.cern.ch/record/2684863)]
+
+<br>
+.center[(ATLAS, 2019)]
+]
+.kol-1-2[
+.center.width-100[[![CERN_news_story](figures/CERN_news_story.png)](https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way)]
+.center[(CERN, 2020)]
+]
 
 ---
 # Why is the likelihood important?
