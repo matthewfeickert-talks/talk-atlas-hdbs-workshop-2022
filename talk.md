@@ -528,6 +528,19 @@ cabinery is a great example of using pyhf to build tools that meet the needs of 
 .center[Alexander Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 ]
 
+---
+# `pyhf xml2sjon` now supports conversions from absolute fixed paths
+
+* Allows for Docker like volume mounting.
+* FINISH
+
+---
+# Join announcements mailing list and test release candidates
+
+* FINISH
+* Add section on volume mounting
+
+
 <!-- Keeping on this theme of uses in communities, both pyhf and cabinetry are components of the IRIS-HEP Analysis Systems pipeline which
 is a substrate of analysis techoogies.
 Given the interoparable design this allows for pyhf to plugin and be used in deployment as a tool to reduce the time to insight and
