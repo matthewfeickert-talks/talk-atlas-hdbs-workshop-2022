@@ -1,0 +1,5 @@
+pyhf[jax]==0.6.3
+jsonschema<4.15.0
+sympy==1.11.1
+matplotlib==3.5.3
+pre-commit
