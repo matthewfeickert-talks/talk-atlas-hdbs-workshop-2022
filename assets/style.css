@@ -410,17 +410,30 @@ td {
     display: inline-block;
 }
 
-/* Hack to get pyhf logo on */
+/* Even worse hack to get another logo on */
 .title-slide:before {
     content: '';
+    /* background: url("https://iris-hep.org/assets/logos/pyhf-logo.png") no-repeat; */
+    background: url("../assets/logos/logo_ATLAS.png") no-repeat;
+    background-size: 100% 100%;
+    width: 243px;
+    height: 128px;
+    position: absolute;
+    bottom: 0.8em;
+    right: 3.3em;
+    display: inline-block;
+}
+
+/* Hack to get pyhf logo on */
+.middle-logo {
+    content: '';
     background: url("https://iris-hep.org/assets/logos/pyhf-logo.png") no-repeat;
-    /* background: url("../assets/logos/logo_experiment.png") no-repeat; */
     background-size: 100% 100%;
     width: 160px;
     height: 108px;
     position: absolute;
-    bottom: 2em;
-    right: 3.3em;
+    bottom: 1em;
+    left: 25.5em;
     display: inline-block;
 }
 

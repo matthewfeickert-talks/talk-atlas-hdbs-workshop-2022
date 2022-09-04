@@ -4,13 +4,15 @@ count: false
 # `pyhf`: pure-Python implementation of HistFactory with tensors and automatic differentiation
 
 .huge.blue[Matthew Feickert]<br>
-.huge[(University of Wisconsin-Madison)]
-<br><br>
+.large[(University of Wisconsin-Madison)]
+<br>
 [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 
 [ATLAS HDBS Workshop 2022](https://indico.cern.ch/event/1132691/contributions/4994710/)
-
+<br>
 September 6th, 2022
+
+.middle-logo[]
 
 ---
 # Talk information
