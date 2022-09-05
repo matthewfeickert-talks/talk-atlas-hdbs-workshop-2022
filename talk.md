@@ -455,7 +455,7 @@ class: focus-slide, center
 # New Art: Analysis as a Differentiable Program
 
 * Extend `pyhf` to be fully end-to-end differentiable (future `pyhf` goal)
-* Possibilities with [`neos`][neos-github] and [`relaxed`][relaxed-github] (c.f. [Nathan Simpson's talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
+* Possibilities with [`neos`][neos-github] and [`relaxed`][relaxed-github] (c.f. [Nathan Simpson's HDBS 2022 talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
 
 .kol-1-4.center[
 .width-100[[![gradhep](https://avatars1.githubusercontent.com/u/65067820)](https://hepsoftwarefoundation.org/activities/differentiablecomputing.html)]
