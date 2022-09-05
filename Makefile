@@ -8,7 +8,7 @@ all: decktape
 
 decktape: talk.md
 	docker run --rm -v ${dir_path}:/slides/ astefanutti/decktape:3.4.1 \
-	https://matthewfeickert.github.io/${current_dir}/index.html \
+	https://matthewfeickert-talks.github.io/${current_dir}/index.html \
 	talk.pdf
 
 decktape_local: talk.md
