@@ -570,8 +570,8 @@ class: focus-slide, center
 
 ---
 class: focus-slide, center
-# Extending and going further for HDBS
-# (thoughts for automatic differentiation and pyhf)
+# Thoughts for HDBS
+# (on automatic differentiation and<br> pyhf use in general)
 
 ---
 # New Art: Analysis as a Differentiable Program
