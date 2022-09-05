@@ -21,22 +21,11 @@ def main(code):
 
 
 if __name__ == "__main__":
-    code = """\
-import micropip
-await micropip.install(["hist", "vector", "mplhep", "pyhf"])
-%matplotlib inline
-import boost_histogram
-import hist
-import vector
-import mplhep
-import pyhf\
-"""
-    main(code)
     print("")
 
     code = """\
 import micropip
-await micropip.install(["pyhf==0.6.3", "requests"])
+await micropip.install(["pyhf==0.6.3", "jsonschema<=4.14.0"])
 %matplotlib inline
 import pyhf\
 """
