@@ -453,27 +453,9 @@ class: focus-slide, center
 
 ---
 # New Art: Analysis as a Differentiable Program
-.kol-1-2[
-- Extend `pyhf` to be fully end-to-end differentiable (future `pyhf` goal)
-- Possibilities with [`neos`][neos-github] and [`relaxed`][relaxed-github] (c.f. [Nathan Simpson's talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
-   - Provide differentiable analogue to histograms with kernel density estimation (KDE) or softmax
-      - Need smooth change compared to abrupt changes in binned yields
-   <!-- - Make profile-likelihood differentiable with [fixed-point differentiation](https://implicit-layers-tutorial.org/implicit_functions/) -->
-   - Samples fed into NN that produces observable (NN output) KDE transformed and histogrammed.
-   - Construct `pyhf` model with observable and perform inference to get $\mathrm{CL}_{s}$ for POI.
-   - Backpropagate the $\mathrm{CL}_{s}$ to update weights for NN.
 
-.center.width-35[[![neos_logo](https://raw.githubusercontent.com/gradhep/neos/master/nbs/assets/neos_logo.png)][neos-github]]
-]
-.kol-1-2[
-.center.width-100[[![neoflow](figures/neoflow.png)](https://indico.cern.ch/event/882824/timetable/#46-neos-physics-analysis-as-a)]
-]
-
-[neos-github]: https://github.com/gradhep/neos
-[relaxed-github]: https://github.com/gradhep/relaxed
-
----
-# Differentiable Ecosystem
+* Extend `pyhf` to be fully end-to-end differentiable (future `pyhf` goal)
+* Possibilities with [`neos`][neos-github] and [`relaxed`][relaxed-github] (c.f. [Nathan Simpson's talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
 
 .kol-1-4.center[
 .width-100[[![gradhep](https://avatars1.githubusercontent.com/u/65067820)](https://hepsoftwarefoundation.org/activities/differentiablecomputing.html)]
@@ -500,9 +482,12 @@ class: focus-slide, center
 
 <br><br>
 .kol-1-1[
+.bold.center[Differentiable Ecosystem]
 .bold.center[Groups, libraries, and applications growing rapidly]
 ]
 
+[neos-github]: https://github.com/gradhep/neos
+[relaxed-github]: https://github.com/gradhep/relaxed
 
 <!-- Focusing on this idea of community use and involvement, it is important to emphasize that pyhf is a **library** focused on modeling
 and inference and not a framework. As part of the Scikit-HEP ecosystem, pyhf's API was designed to be extensible which has allowed for
