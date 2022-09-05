@@ -570,6 +570,7 @@ class: focus-slide, center
 ---
 class: focus-slide, center
 # Extending and going further for HDBS
+# (thoughts for automatic differentiation and pyhf)
 
 ---
 # New Art: Analysis as a Differentiable Program
@@ -634,10 +635,27 @@ cabinery is a great example of using pyhf to build tools that meet the needs of 
 ]
 
 ---
-# `pyhf xml2sjon` now supports conversions from absolute fixed paths
+# `xml2json` conversions from absolute fixed paths
 
-* Allows for Docker like volume mounting.
-* FINISH
+* In `pyhf` `v0.7.0`, `pyhf xml2json` will support conversion from absolute fixed paths
+   - An unpleasant side effect if [model is made with `SFramework`](https://github.com/scikit-hep/pyhf/issues/1882#issuecomment-1157740774)
+   - c.f. [pyhf PR #1909](https://github.com/scikit-hep/pyhf/pull/1909)
+* Added Docker CLI API inspired `-v`/`--mount` option
+   - Prunes paths out and renaming paths on-the-fly in `readxml`
+```
+-v, --mount PATH:PATH Consists of two fields, separated by a colon
+                              character ( : ). The first field is the
+                              local path to where files are located, the
+                              second field is the path where the file or
+                              directory are saved in the XML configuration.
+                              This is similar in spirit to docker.
+```
+* Example:
+```
+pyhf xml2json \
+   -v $PWD:/absolute/path/from/when/model/generated/physics_run.xml \
+   --output-file output.json
+```
 
 ---
 # Join announcements mailing list and test release candidates
