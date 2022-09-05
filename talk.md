@@ -170,7 +170,7 @@ $$
 - Enables .italic[efficient] computation of gradients and Jacobians
    - Large benefit to statistical inference
 - Replace non-differentiable operations with differentiable analogues
-   - Binning, sorting, cuts
+   - Binning, sorting, cuts (simple example in backup)
    - c.f. [Nathan Simpson's HDBS 2022 talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with)
 ]
 .kol-1-2[
@@ -313,7 +313,7 @@ $$
 - Open source tool for all of HEP
    - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
    - Used in ATLAS SUSY, Exotics, and Top groups in [22 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models) (inference and published models)
-   - Used by Belle II<br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
+   - Used by Belle II <br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766)) and Belle ([arXiv:2207.07476](https://inspirehep.net/literature/2115280))
    - Used in [analyses and for reinterpretation](https://scikit-hep.org/pyhf/citations.html#use-citations) by phenomenology community, `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793)), and `MadAnalysis 5` ([arXiv:2206.14870](https://inspirehep.net/literature/2103971))
    - Summer 2022 [IRIS-HEP supported Fellow (Peter Ridolfi)](https://iris-hep.org/fellows/peterridolfi.html) project to provide conversion support to [CMS Combine][CMS Combine]
       - [`pyhf-combine-converter`](https://pypi.org/project/pyhf-combine-converter/)
@@ -339,7 +339,7 @@ $$
 - Open source tool for all of HEP
    - [IRIS-HEP](https://iris-hep.org/projects/pyhf.html) supported Scikit-HEP project
    - Used in ATLAS SUSY, Exotics, and Top groups in [22 published analyses](https://scikit-hep.org/pyhf/citations.html#published-statistical-models) (inference and published models)
-   - Used by Belle II<br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766))
+   - Used by Belle II <br>(DOI: [10.1103/PhysRevLett.127.181802](https://inspirehep.net/literature/1860766)) and Belle ([arXiv:2207.07476](https://inspirehep.net/literature/2115280))
    - Used in [analyses and for reinterpretation](https://scikit-hep.org/pyhf/citations.html#use-citations) by phenomenology community, `SModelS` <br>(DOI: [10.1016/j.cpc.2021.107909](https://inspirehep.net/literature/1814793)), and `MadAnalysis 5` ([arXiv:2206.14870](https://inspirehep.net/literature/2103971))
    - Summer 2022 [IRIS-HEP supported Fellow (Peter Ridolfi)](https://iris-hep.org/fellows/peterridolfi.html) project to provide conversion support to [CMS Combine][CMS Combine]
       - [`pyhf-combine-converter`](https://pypi.org/project/pyhf-combine-converter/)
