@@ -562,8 +562,8 @@ cabinery is a great example of using pyhf to build tools that meet the needs of 
 * Example:
 ```
 pyhf xml2json \
-   -v $PWD:/absolute/path/from/when/model/generated/physics_run.xml \
-   --output-file output.json
+   -v relative/path:/absolute/path/from/when/model/generated/physics_run.xml \
+   --output-file workspace.json
 ```
 
 <!-- Finally, in thinking into the future about how pyhf can be deployed in non-traditional situations, here's an example of using pyhf natively
