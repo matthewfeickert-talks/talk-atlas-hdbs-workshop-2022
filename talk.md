@@ -79,7 +79,7 @@ Provide constraints on models through setting best limits
 
 - All require .bold[building statistical models] and .bold[fitting models] to data to perform statistical inference
 - Model complexity can be huge for complicated searches (hundreds of parameters + systematics)
-- **Problem:** Time to fit can be .bold[literally days] (for MLE fits, worse if pseudoexperiments required)
+- **Problem:** Time to fit can be .bold[very long] (for MLE fits, worse if pseudoexperiments required)
 - .blue[Goal:] Empower analysts with fast fits and expressive models
 
 ---
@@ -732,25 +732,22 @@ This was all written using pyhf and simple HTML.
 ---
 # Summary
 .kol-2-3[
-- .large[Library for modeling and .bold[accelerated] fitting]
+- Automatic differentiation gives a powerful tool in the form of differentiable programming
+   - Exploitation of .bold[gradient for optimization]
+   - Possible .bold[end-to-end optimization] of systems and analyses
+- .large[`pyhf`: library for modeling and .bold[accelerated] fitting that leverages automatic differentiation]
    - reducing time to insight/inference!
    - Hardware acceleration on GPUs and vectorized operations
    - Backend agnostic Python API and CLI
-- .large[Flexible .bold[declarative] schema]
-   - JSON: ubiquitous, universal support, versionable
-- .large[Enabling technology for .bold[reinterpretation]]
-   - JSON Patch files for efficient computation of new signal models
-   - Unifying tool for theoretical and experimental physicists
-- .large[Growing use community across .bold[all of HEP]]
-   - Theory and experiment
-- .large[Project in growing .bold[Pythonic HEP ecosystem]]
+   - Flexible .bold[declarative] JSON schema
    - [Openly developed on GitHub](https://github.com/scikit-hep/pyhf) and welcome contributions
-   - [Comprehensive open tutorials](https://pyhf.github.io/pyhf-tutorial/)
+- .large[Recommended exploration for analysis]
+   - pyhf (new v0.7.0 forthcoming)
+   - cabinetry
+   - gradhep org
 ]
 .kol-1-3[
-<br>
-<br>
-<br>
+.center.width-90[![MLE_grad_map_full](figures/MLE_grad_map_full.png)]
 .center.width-100[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
 ]
 
@@ -782,6 +779,31 @@ class: middle
 class: end-slide, center
 
 Backup
+
+---
+# Automatic Differentiation: Forward and Reverse
+
+.center[Performing maps $f: \mathbb{R}^{m} \to \mathbb{R}^{n}$]
+<br>
+.center[aka, "wide" vs. "tall" transformations]
+<br>
+.kol-1-2[
+- .bold[Forward] mode
+- Column wise evaluation of Jacobian
+   - Jacobian-vector products
+   - Execution time scales with input parameters
+   - Example: few variables into very high dimensional spaces $\mathbb{R} \to \mathbb{R}^{100}$
+]
+.kol-1-2[
+- .bold[Reverse] mode
+- Row wise evaluation of Jacobian
+   - vector-Jacobian products
+   - Execution time scales with output parameters
+   - Example: scalar maps from very high-dimensional spaces $\mathbb{R}^{100} \to \mathbb{R}$
+]
+
+<br>
+.center[Allows for efficient computation depending on dimensionality]
 
 <!-- Another important feature about pyhf is that the model specification is in JSON.
 This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
