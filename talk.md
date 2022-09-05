@@ -356,6 +356,33 @@ This has been exciting to see as we feel that having open community tooling acro
 .width-95[[![community-adoption](figures/community-adoption.svg)](https://scikit-hep.org/pyhf/citations.html)]
 ]
 
+<!-- Another important feature about pyhf is that the model specification is in JSON.
+This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
+heat death of the Universe we have long term support baked in as well.
+It is additionally parsable by every language, and so is highly portable and is easily versioned, compressed, and preserved.
+It can also be patched which allows for interesting applications in analysis reinterpretation.
+With pyhf's CLI API we also support bi-directional translations with ROOT. -->
+---
+# JSON spec fully describes the HistFactory model
+
+.kol-1-4.width-100[
+- Human & machine readable .bold[declarative] statistical models
+- Industry standard
+   - Will be with us forever
+- Parsable by every language
+   - Highly portable
+   - Bidirectional translation <br>with ROOT
+- Versionable and easily preserved
+   - JSON Schema [describing<br> HistFactory specification](https://scikit-hep.org/pyhf/likelihood.html#bibliography)
+   - Attractive for analysis preservation
+   - Highly compressible
+]
+.kol-3-4.center[
+.width-105[![demo_JSON](figures/carbon_JSON_spec_annotated.png)]
+
+.center[[`JSON` defining a single channel, two bin counting experiment with systematics](https://scikit-hep.org/pyhf/likelihood.html#toy-example)]
+]
+
 <!-- pyhf support multiple tensor libraries like NumPy, PyTorch, TensorFlow, and JAX as computational backends to impliment n-dimensional
 array operations through a common API.
 These last three are machine learning libraries and allow for explotation of automatic differentiaion and hardware acceleration.
@@ -448,120 +475,6 @@ $$
 
 .bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
 
----
-class: focus-slide, center
-# Enable new techniques with autodiff
-
-.huge.bold.center[Familiar (toy) example: Optimizing a cut for an analysis]
-
----
-# Discriminate Signal and Background
-
-- .large[Counting experiment for presence of signal process]
-- .large[Place discriminate cut on observable $x$ to maximize significance]
-   - .large[Significance: $\sqrt{2 (S+B) \log(1 + \frac{S}{B})-2S}$ (for small $S/B$: significance $\to S/\sqrt{B}$)]
-
-.footnote[Example inspired by Alexander Held's [example of a differentiable analysis](https://github.com/alexander-held/differentiable-analysis-example/)]
-
-.kol-1-2.center[
-.width-100[![signal_background_shapes](figures/signal_background_shapes.png)]
-]
-.kol-1-2.center[
-.width-100[![signal_background_stacked](figures/signal_background_stacked.png)]
-]
-
----
-# Traditionally: Scan across cut values
-
-- .large[Set baseline cut at $x=0$ (accept everything)]
-- .large[Step along cut values in $x$ and calculate significance at each cut. Keep maximum.]
-<!--  -->
-.kol-1-2.center[
-.width-100[![signal_background_stacked](figures/signal_background_stacked.png)]
-]
-.kol-1-2[
-.width-100[![significance_cut_scan](figures/significance_cut_scan.png)]
-]
-
-.center[Significance: $\sqrt{2 (S+B) \log(1 + \frac{S}{B})-2S}$]
-
----
-# Differentiable Approach
-
-.kol-1-2.large[
-- Need differentiable analogue to non-differentiable cut
-- Weight events using activation function of sigmoid
-
-.center[$\left(1 + e^{-\alpha(x-c)}\right)^{-1}$]
-
-- Event far .italic[below] cut: $w \to 0$
-- Event far .italic[above] cut: $w \to 1$
-- $\alpha$ tunable parameter for steepness
-   - Larger $\alpha$ more cut-like
-]
-.kol-1-2[
-<br>
-.width-100[![sigmoid_event_weights](figures/sigmoid_event_weights.png)]
-]
-
----
-# Compare Hard Cuts vs. Differentiable
-
-.kol-1-2.large[
-- For hard cuts the significance was calculated by applying the cut and than using the remaining $S$ and $B$ events
-- But for the differentiable model there aren't cuts, so approximate cuts with the sigmoid approach and weights
-- Comparing the two methods shows good agreement
-- Can see that the approximation to the hard cuts improves with larger $\alpha$
-   - But can become unstable, so tunable
-]
-.kol-1-2.center[
-<br>
-.width-100[![significance_scan_compare](figures/significance_scan_compare.png)]
-]
-
----
-# Compare Hard Cuts vs. Differentiable
-
-.kol-1-2.large[
-- For hard cuts the significance was calculated by applying the cut and then using the remaining $S$ and $B$ events
-- But for the differentiable model there aren't cuts, so approximate cuts with the sigmoid approach and weights
-- Comparing the two methods shows good agreement
-- Can see that the approximation to the hard cuts improves with larger $\alpha$
-   - But can become unstable, so tunable
-]
-.kol-1-2.center[
-<br>
-.width-100[![significance_scan_compare_high_alpha](figures/significance_scan_compare_high_alpha.png)]
-]
-
----
-# Accessing the Gradient
-
-.kol-2-5.large[
-- Most importantly though, with the differentiable model we have access to the gradient
-   - $\partial_{x} f(x)$
-- So can find the maximum significance at the point where the gradient of the significance is zero
-   - $\partial_{x} f(x) = 0$
-- With the gradient in hand this cries out for automated optimization!
-]
-.kol-3-5.center[
-.width-90[![significance_gradient](figures/significance_gradient.png)]
-]
-
----
-# Automated Optimzation
-
-.kol-2-5.large[
-- With a simple gradient descent algorithm can easily automate the significance optimization
-- For this toy example, obviously less efficient then cut and count scan
-- Gradient methods apply well in higher dimensional problems
-- Allows for the "cut" to become a parameter that can be differentiated through for the larger analysis
-]
-.kol-3-5.center[
-.width-100[![automated_optimization](figures/automated_optimization.png)]
-
-<!-- TODO: Make this an animated GIF -->
-]
 
 ---
 class: focus-slide, center
@@ -800,31 +713,119 @@ Backup
 <br>
 .center[Allows for efficient computation depending on dimensionality]
 
-<!-- Another important feature about pyhf is that the model specification is in JSON.
-This gives us a human and machine readable delcarative spec, and as JSON is everywhere and will be with us until the
-heat death of the Universe we have long term support baked in as well.
-It is additionally parsable by every language, and so is highly portable and is easily versioned, compressed, and preserved.
-It can also be patched which allows for interesting applications in analysis reinterpretation.
-With pyhf's CLI API we also support bi-directional translations with ROOT. -->
 ---
-# JSON spec fully describes the HistFactory model
+class: focus-slide, center
+# Enable new techniques with autodiff
 
-.kol-1-4.width-100[
-- Human & machine readable .bold[declarative] statistical models
-- Industry standard
-   - Will be with us forever
-- Parsable by every language
-   - Highly portable
-   - Bidirectional translation <br>with ROOT
-- Versionable and easily preserved
-   - JSON Schema [describing<br> HistFactory specification](https://scikit-hep.org/pyhf/likelihood.html#bibliography)
-   - Attractive for analysis preservation
-   - Highly compressible
+.huge.bold.center[Familiar (toy) example: Optimizing a cut for an analysis]
+
+---
+# Discriminate Signal and Background
+
+- .large[Counting experiment for presence of signal process]
+- .large[Place discriminate cut on observable $x$ to maximize significance]
+   - .large[Significance: $\sqrt{2 (S+B) \log(1 + \frac{S}{B})-2S}$ (for small $S/B$: significance $\to S/\sqrt{B}$)]
+
+.footnote[Example inspired by Alexander Held's [example of a differentiable analysis](https://github.com/alexander-held/differentiable-analysis-example/)]
+
+.kol-1-2.center[
+.width-100[![signal_background_shapes](figures/signal_background_shapes.png)]
 ]
-.kol-3-4.center[
-.width-105[![demo_JSON](figures/carbon_JSON_spec_annotated.png)]
+.kol-1-2.center[
+.width-100[![signal_background_stacked](figures/signal_background_stacked.png)]
+]
 
-.center[[`JSON` defining a single channel, two bin counting experiment with systematics](https://scikit-hep.org/pyhf/likelihood.html#toy-example)]
+---
+# Traditionally: Scan across cut values
+
+- .large[Set baseline cut at $x=0$ (accept everything)]
+- .large[Step along cut values in $x$ and calculate significance at each cut. Keep maximum.]
+<!--  -->
+.kol-1-2.center[
+.width-100[![signal_background_stacked](figures/signal_background_stacked.png)]
+]
+.kol-1-2[
+.width-100[![significance_cut_scan](figures/significance_cut_scan.png)]
+]
+
+.center[Significance: $\sqrt{2 (S+B) \log(1 + \frac{S}{B})-2S}$]
+
+---
+# Differentiable Approach
+
+.kol-1-2.large[
+- Need differentiable analogue to non-differentiable cut
+- Weight events using activation function of sigmoid
+
+.center[$\left(1 + e^{-\alpha(x-c)}\right)^{-1}$]
+
+- Event far .italic[below] cut: $w \to 0$
+- Event far .italic[above] cut: $w \to 1$
+- $\alpha$ tunable parameter for steepness
+   - Larger $\alpha$ more cut-like
+]
+.kol-1-2[
+<br>
+.width-100[![sigmoid_event_weights](figures/sigmoid_event_weights.png)]
+]
+
+---
+# Compare Hard Cuts vs. Differentiable
+
+.kol-1-2.large[
+- For hard cuts the significance was calculated by applying the cut and than using the remaining $S$ and $B$ events
+- But for the differentiable model there aren't cuts, so approximate cuts with the sigmoid approach and weights
+- Comparing the two methods shows good agreement
+- Can see that the approximation to the hard cuts improves with larger $\alpha$
+   - But can become unstable, so tunable
+]
+.kol-1-2.center[
+<br>
+.width-100[![significance_scan_compare](figures/significance_scan_compare.png)]
+]
+
+---
+# Compare Hard Cuts vs. Differentiable
+
+.kol-1-2.large[
+- For hard cuts the significance was calculated by applying the cut and then using the remaining $S$ and $B$ events
+- But for the differentiable model there aren't cuts, so approximate cuts with the sigmoid approach and weights
+- Comparing the two methods shows good agreement
+- Can see that the approximation to the hard cuts improves with larger $\alpha$
+   - But can become unstable, so tunable
+]
+.kol-1-2.center[
+<br>
+.width-100[![significance_scan_compare_high_alpha](figures/significance_scan_compare_high_alpha.png)]
+]
+
+---
+# Accessing the Gradient
+
+.kol-2-5.large[
+- Most importantly though, with the differentiable model we have access to the gradient
+   - $\partial_{x} f(x)$
+- So can find the maximum significance at the point where the gradient of the significance is zero
+   - $\partial_{x} f(x) = 0$
+- With the gradient in hand this cries out for automated optimization!
+]
+.kol-3-5.center[
+.width-90[![significance_gradient](figures/significance_gradient.png)]
+]
+
+---
+# Automated Optimzation
+
+.kol-2-5.large[
+- With a simple gradient descent algorithm can easily automate the significance optimization
+- For this toy example, obviously less efficient then cut and count scan
+- Gradient methods apply well in higher dimensional problems
+- Allows for the "cut" to become a parameter that can be differentiated through for the larger analysis
+]
+.kol-3-5.center[
+.width-100[![automated_optimization](figures/automated_optimization.png)]
+
+<!-- TODO: Make this an animated GIF -->
 ]
 
 <!-- Once pyhf was established and sufficiently feature complete, ATLAS released a PUB note in 2019 that validated it by reproducing
