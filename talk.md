@@ -638,11 +638,11 @@ cabinery is a great example of using pyhf to build tools that meet the needs of 
 ---
 # `xml2json` conversions from absolute fixed paths
 
-* In `pyhf` `v0.7.0`, [`pyhf xml2json`](https://pyhf.readthedocs.io/en/stable/cli.html#pyhf-xml2json) CLI API will support conversion from absolute fixed paths
+* In `pyhf` `v0.7.0`, [`pyhf xml2json`](https://pyhf.readthedocs.io/en/stable/cli.html#pyhf-xml2json) CLI API will support conversion of XML that contains absolute fixed paths
    - An unpleasant side effect if [model is made with `SFramework`](https://github.com/scikit-hep/pyhf/issues/1882#issuecomment-1157740774)
    - c.f. [pyhf PR #1909](https://github.com/scikit-hep/pyhf/pull/1909)
 * Added Docker CLI API inspired `-v`/`--mount` option
-   - Prunes paths out and renaming paths on-the-fly in `readxml`
+   - Prunes paths out and renames paths on-the-fly in `readxml`
 ```
 -v, --mount PATH:PATH Consists of two fields, separated by a colon
                               character ( : ). The first field is the
@@ -728,24 +728,6 @@ This was all written using pyhf and simple HTML.
 .center.width-55[[![try-pyhf](figures/try-pyhf-plot.png)](https://kratsg.github.io/try-pyhf/)]
 <!--  -->
 .center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
-
-<!-- And finally I think this area is exciting when combined with the timing that HEPData now further supports HistFactory JSON.
-HEPData entries that include a HistFactory JSON model now recieve a HistFactory badge and the model itself gets a unique DOI.
-So a big thanks to the HEPData team for this work and the pyhf team is looking forward to working with HEPData to investiage if there
-are ways to add visualization and interactivity for models to HEPData without encumbering the service. -->
----
-# HEPData support for HistFactory JSON and more
-
-.kol-2-7[
-<br><br><br><br><br><br><br>
-.center.width-100[[![hepdata-histfactory-tweet](figures/hepdata-histfactory-tweet.png)](https://twitter.com/HEPData/status/1529038702344798212)]
-]
-.kol-5-7[
-<br>
-.center.width-100[[![hepdata-histfactory-badge](figures/hepdata-histfactory-badge.png)](https://www.hepdata.net/search/?q=analysis:HistFactory)]
-]
-
-.center[Published HistFactory probability models get own DOI (future: model render, interactivity)]
 
 ---
 # Summary
