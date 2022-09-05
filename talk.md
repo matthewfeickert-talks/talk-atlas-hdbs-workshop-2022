@@ -381,6 +381,7 @@ But there are instances that we've seen for large complex models where the time 
 .kol-1-2[
 - Hardware acceleration giving .bold[order of magnitude speedup] in interpolation for systematics!
    - does suffer some overhead
+   - Robert Les has [preliminary study](https://indico.cern.ch/event/1166812/contributions/4900126/)
 - Noticeable impact for large and complex models
    - hours to minutes for fits
 ]
