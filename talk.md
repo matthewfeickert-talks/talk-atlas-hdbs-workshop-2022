@@ -372,7 +372,7 @@ But there are instances that we've seen for large complex models where the time 
 .grid[
 .kol-2-3[
 - All numerical operations implemented in .bold[tensor backends] through an API of $n$-dimensional array operations
-- Using deep learning frameworks as computational backends allows for .bold[exploitation of auto differentiation (autograd) and GPU acceleration]
+- Using deep learning frameworks as computational backends allows for .bold[exploitation of auto differentiation (autodiff) and GPU acceleration]
 - As huge buy in from industry we benefit for free as these frameworks are .bold[continually improved] by professional software engineers (physicists are not)
 
 .kol-1-2.center[
