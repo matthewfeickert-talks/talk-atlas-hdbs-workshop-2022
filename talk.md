@@ -547,7 +547,7 @@ cabinery is a great example of using pyhf to build tools that meet the needs of 
 # `xml2json` conversions from absolute fixed paths
 
 * In `pyhf` `v0.7.0+`, [`pyhf xml2json`](https://pyhf.readthedocs.io/en/stable/cli.html#pyhf-xml2json) CLI API supports conversion of XML that contains absolute fixed paths
-   - Side effect if [xml of model is made with `SFramework`](https://github.com/scikit-hep/pyhf/issues/1882#issuecomment-1157740774)
+   - Side effect if [xml of model is made with `SFramework`](https://github.com/scikit-hep/pyhf/issues/1882#issuecomment-1157740774) (thanks for the GitHub Issue Carsten!)
    - c.f. [pyhf PR #1909](https://github.com/scikit-hep/pyhf/pull/1909)
 * Added Docker CLI API inspired `-v`, `--mount` option
    - Prunes paths out and renames paths on-the-fly in memory in `readxml`
