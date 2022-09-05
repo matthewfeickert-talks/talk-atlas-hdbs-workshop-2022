@@ -334,6 +334,7 @@ $$
   - No dependence on ROOT!
 
 .center.width-100[[![pyhf_PyPI](figures/pyhf_PyPI_rc.png)](https://pypi.org/project/pyhf/0.7.0rc3/)]
+.center.tiny[Join [`pyhf-announcements` list](https://groups.google.com/group/pyhf-announcements/subscribe) to be alerted of release candidates.]
 ]
 .kol-1-2.large[
 - Open source tool for all of HEP
