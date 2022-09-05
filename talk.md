@@ -186,22 +186,6 @@ class: focus-slide, center
 
 .huge.bold.center[Application of autodiff in `pyhf`]
 
----
-# HistFactory Model
-
-- A flexible probability density function (p.d.f.) template to build statistical models in high energy physics
-- Developed in 2011 during work that lead to the Higgs discovery [[CERN-OPEN-2012-016](http://inspirehep.net/record/1236448)]
-- Widely used by ATLAS for .bold[measurements of known physics] and .bold[searches for new physics]
-
-.kol-2-5.center[
-.width-90[[![HIGG-2016-25](figures/HIGG-2016-25.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2016-25/)]
-.bold[Standard Model]
-]
-.kol-3-5.center[
-.width-100[[![SUSY-2016-16](figures/SUSY-2016-16.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2016-16/)]
-<br>.bold[Beyond the Standard Model]
-]
-
 <!-- If we look at the HistFactory model itself, we can see that it is comprised of two main parts.
 This first part in blue if a produce of Poissons across all bins in all channels (which you can think of as analysis regions).
 And then this second part in red are constraint terms.-->
