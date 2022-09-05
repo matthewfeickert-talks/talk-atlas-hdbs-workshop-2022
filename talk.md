@@ -139,7 +139,7 @@ Provide constraints on models through setting best limits
 ---
 # Automatic Differentiation
 
-.kol-3-5[
+.kol-3-5.large[
 - Automatic differentiation (autodiff) provides gradients of numerical functions to machine precision
 - Build computational graph of the calculation
 - Nodes represent operations, edges represent flow of gradients
@@ -149,7 +149,6 @@ Provide constraints on models through setting best limits
 $$
 f(a,b) = a^{2} \sin(ab)
 $$
-<br>
 $$
 \frac{df}{da} = \frac{\partial c}{\partial a} \frac{\partial f}{\partial c} + \frac{\partial d}{\partial a} \frac{\partial e}{\partial d} \frac{\partial f}{\partial e}
 $$
@@ -163,10 +162,8 @@ $$
 ---
 # Differentiable Programming
 
-<br>
-
 .grid[
-.kol-1-2[
+.kol-1-2.large[
 - Allows writing fully differentiable programs that are efficient and accurate
 - Resulting system can be optimized end-to-end using efficient gradient-based optimization algorithms
    - Exploit advances in deep learning
@@ -174,8 +171,10 @@ $$
    - Large benefit to statistical inference
 - Replace non-differentiable operations with differentiable analogues
    - Binning, sorting, cuts
+   - c.f. [Nathan Simpson's HDBS 2022 talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with)
 ]
 .kol-1-2[
+<br><br>
 .center.width-100[[![Snowmass_LOI](figures/Snowmass_LOI.png)](https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF5_CompF3_Gordon_Watts-046.pdf)]
 .center[[Snowmass 2021 LOI](https://www.snowmass21.org/docs/files/summaries/CompF/SNOWMASS21-CompF5_CompF3_Gordon_Watts-046.pdf)]
 ]
@@ -577,7 +576,7 @@ class: focus-slide, center
 # New Art: Analysis as a Differentiable Program
 
 * Extend `pyhf` to be fully end-to-end differentiable (future `pyhf` goal)
-* Possibilities with [`neos`][neos-github] and [`relaxed`][relaxed-github] (c.f. [Nathan Simpson's HDBS 2022 talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with) next!)
+* Possibilities with [`neos`][neos-github] and [`relaxed`][relaxed-github] (c.f. [Nathan Simpson's HDBS 2022 talk](https://indico.cern.ch/event/1132691/timetable/#49-analysis-optimization-with)!)
 
 .kol-1-4.center[
 .width-100[[![gradhep](https://avatars1.githubusercontent.com/u/65067820)](https://hepsoftwarefoundation.org/activities/differentiablecomputing.html)]
