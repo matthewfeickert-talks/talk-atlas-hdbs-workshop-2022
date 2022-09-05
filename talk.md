@@ -658,28 +658,6 @@ pyhf xml2json \
    --output-file output.json
 ```
 
----
-# Join announcements mailing list and test release candidates
-
-* FINISH
-* Add section on volume mounting
-
-
-<!-- Keeping on this theme of uses in communities, both pyhf and cabinetry are components of the IRIS-HEP Analysis Systems pipeline which
-is a substrate of analysis techoogies.
-Given the interoparable design this allows for pyhf to plugin and be used in deployment as a tool to reduce the time to insight and
-inference and when pyhf's JSON spec that allows for patching of signal models is combined with techologies like RECAST it becomes an
-enabling techology for reinterpreation as well. -->
----
-# Core part of IRIS-HEP Analysis Systems pipeline
-.center[
-.width-65[[![analysis-systems-scope](figures/ecosystem.png)](https://iris-hep.org/as.html)]
-]
-- .large[Analysis Systems pipeline: deployable stack of experiment agnostic infrastructure]
-   - c.f. demonstration at [IRIS-HEP Analysis Grand Challenge Tools Workshop 2022](https://indico.cern.ch/event/1126109/contributions/4780156/)
-- .large[Accelerating fitting (reducing time to .bold[insight] (statistical inference)!)] (`pyhf` + `cabinetry`)
-- .large[An enabling technology for .bold[reinterpretation]] (`pyhf` + RECAST)
-
 <!-- Finally, in thinking into the future about how pyhf can be deployed in non-traditional situations, here's an example of using pyhf natively
 in the browser.
 This slide shows the Pyodide CPython port into WebAssembly running natively in my web browser with an interface exposed by the Jupyterlite kernel.
