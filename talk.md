@@ -1,7 +1,7 @@
 class: middle, center, title-slide
 count: false
 
-# `pyhf` and thoughts on analysis optimization<br> with automatic differentiation
+# `pyhf` and analysis optimization<br> with automatic differentiation
 
 .huge.blue[Matthew Feickert]<br>
 .large[(University of Wisconsin-Madison)]
