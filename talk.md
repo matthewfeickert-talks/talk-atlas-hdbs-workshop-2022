@@ -14,14 +14,14 @@ September 6th, 2022
 
 .middle-logo[]
 
----
+<!-- ---
 # Talk information
 <br><br>
 
 - .bold[talk time]: .bold[18 minute] presentation on pyhf
    - .bold[15 minutes] talk
    - .bold[3 minutes] questions
-- .bold[talk request]: For the "New ML approaches" session in the spirit of how ML developments have helped us improve the physics we're able to do we'd like to invite you to give a talk on phyf, any recent developments, and how HDBS analyses can use it for better physics.
+- .bold[talk request]: For the "New ML approaches" session in the spirit of how ML developments have helped us improve the physics we're able to do we'd like to invite you to give a talk on phyf, any recent developments, and how HDBS analyses can use it for better physics. -->
 
 ---
 # `pyhf` team
