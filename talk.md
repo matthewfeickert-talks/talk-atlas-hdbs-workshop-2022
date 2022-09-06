@@ -463,10 +463,10 @@ $$
 .bold.center[Having access to the gradients makes the fit orders of magnitude faster than finite difference]
 
 
----
+<!-- ---
 class: focus-slide, center
 # Thoughts for HDBS
-# (on automatic differentiation and<br> pyhf use in general)
+# (on automatic differentiation and<br> pyhf use in general) -->
 
 ---
 # New Art: Analysis as a Differentiable Program
