@@ -54,7 +54,7 @@ University of California Santa Cruz SCIPP
 
 .center.large[plus more than 20 contributors]
 
----
+<!-- ---
 # Goals of physics analysis at the LHC
 
 .kol-1-1[
@@ -79,7 +79,7 @@ Provide constraints on models through setting best limits
 - All require .bold[building statistical models] and .bold[fitting models] to data to perform statistical inference
 - Model complexity can be huge for complicated searches (hundreds of parameters + systematics)
 - **Problem:** Time to fit can be .bold[very long] (for MLE fits, worse if pseudoexperiments required)
-- .blue[Goal:] Empower analysts with fast fits and expressive models
+- .blue[Goal:] Empower analysts with fast fits and expressive models -->
 
 ---
 # Gradients as Computational Tools
@@ -526,28 +526,6 @@ cabinery is a great example of using pyhf to build tools that meet the needs of 
 .center[Alexander Held, [ATLAS SUSY Workshop 2021](https://indico.cern.ch/event/1056428/contributions/4523825/)]
 ]
 
----
-# `xml2json` conversions from absolute fixed paths
-
-* In `pyhf` `v0.7.0+`, [`pyhf xml2json`](https://pyhf.readthedocs.io/en/stable/cli.html#pyhf-xml2json) CLI API supports conversion of XML that contains absolute fixed paths
-   - Side effect if [xml of model is made with `SFramework`](https://github.com/scikit-hep/pyhf/issues/1882#issuecomment-1157740774) (thanks for the GitHub Issue Carsten!)
-   - c.f. [pyhf PR #1909](https://github.com/scikit-hep/pyhf/pull/1909)
-* Added Docker CLI API inspired `-v`, `--mount` option
-   - Prunes paths out and renames paths on-the-fly in memory in `readxml`
-```
--v, --mount PATH:PATH Consists of two fields, separated by a colon
-                              character ( : ). The first field is the
-                              local path to where files are located, the
-                              second field is the path where the file or
-                              directory are saved in the XML configuration.
-                              This is similar in spirit to docker.
-```
-* Example:
-```
-pyhf xml2json \
-   -v relative/path:/absolute/path/from/when/model/generated/physics_run.xml \
-   --output-file workspace.json
-```
 
 ---
 # Summary
@@ -670,6 +648,29 @@ This was all written using pyhf and simple HTML.
 .center.width-55[[![try-pyhf](figures/try-pyhf-plot.png)](https://kratsg.github.io/try-pyhf/)]
 <!--  -->
 .center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
+
+---
+# `xml2json` conversions from absolute fixed paths
+
+* In `pyhf` `v0.7.0+`, [`pyhf xml2json`](https://pyhf.readthedocs.io/en/stable/cli.html#pyhf-xml2json) CLI API supports conversion of XML that contains absolute fixed paths
+   - Side effect if [xml of model is made with `SFramework`](https://github.com/scikit-hep/pyhf/issues/1882#issuecomment-1157740774) (thanks for the GitHub Issue Carsten!)
+   - c.f. [pyhf PR #1909](https://github.com/scikit-hep/pyhf/pull/1909)
+* Added Docker CLI API inspired `-v`, `--mount` option
+   - Prunes paths out and renames paths on-the-fly in memory in `readxml`
+```
+-v, --mount PATH:PATH Consists of two fields, separated by a colon
+                              character ( : ). The first field is the
+                              local path to where files are located, the
+                              second field is the path where the file or
+                              directory are saved in the XML configuration.
+                              This is similar in spirit to docker.
+```
+* Example:
+```
+pyhf xml2json \
+   -v relative/path:/absolute/path/from/when/model/generated/physics_run.xml \
+   --output-file workspace.json
+```
 
 ---
 # Automatic Differentiation: Forward and Reverse
