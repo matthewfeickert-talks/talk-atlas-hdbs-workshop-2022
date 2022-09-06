@@ -143,8 +143,8 @@ Provide constraints on models through setting best limits
 - Build computational graph of the calculation
 - Nodes represent operations, edges represent flow of gradients
    - vector-matrix (matrix-vector) operations
-   - Jacobian-vector (vector-Jacobian) product
 - Apply the chain rule to operations
+   - Jacobian-vector (vector-Jacobian) product
    - Can traverse the graph in forward or reverse modes depending on the relative dimensions of input and output for efficient computation
 
 $$
@@ -159,6 +159,7 @@ $$
 ]
 .kol-2-5.center[
 .width-100[[![autodiff_graph](figures/autodiff_graph.png)](https://indico.cern.ch/event/941278/contributions/4084835/)]
+forward pass through the graph for $f(a,b)$
 ]
 
 ---
