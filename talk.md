@@ -138,16 +138,19 @@ Provide constraints on models through setting best limits
 ---
 # Automatic Differentiation
 
-.kol-3-5.large[
+.kol-3-5[
 - Automatic differentiation (autodiff) provides gradients of numerical functions to machine precision
 - Build computational graph of the calculation
 - Nodes represent operations, edges represent flow of gradients
+   - vector-matrix (matrix-vector) operations
+   - Jacobian-vector product (vector-Jacobian product)
 - Apply the chain rule to operations
    - Can traverse the graph in forward or reverse modes depending on the relative dimensions of input and output for efficient computation
 
 $$
 f(a,b) = a^{2} \sin(ab)
 $$
+<br>
 $$
 \frac{df}{da} = \frac{\partial c}{\partial a} \frac{\partial f}{\partial c} + \frac{\partial d}{\partial a} \frac{\partial e}{\partial d} \frac{\partial f}{\partial e}
 $$
