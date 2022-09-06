@@ -41,8 +41,7 @@ Technical University of Munich
 
 [Matthew Feickert](https://www.matthewfeickert.com/)
 
-University of Wisconsin-Madison<br>
-(Illinois for work presented today)
+University of Wisconsin-Madison
 ]
 .kol-1-3.center[
 .circle.width-75[![Giordon](figures/collaborators/stark.jpg)]
