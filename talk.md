@@ -549,6 +549,57 @@ pyhf xml2json \
    --output-file workspace.json
 ```
 
+---
+# Summary
+.kol-2-3[
+- Automatic differentiation gives a powerful tool in the form of differentiable programming
+   - Exploitation of .bold[gradient for optimization]
+   - Possible .bold[end-to-end optimization] of systems and analyses
+- .large[`pyhf`: library for modeling and .bold[accelerated] fitting that leverages automatic differentiation]
+   - reducing time to insight/inference!
+   - Hardware acceleration on GPUs and vectorized operations
+   - Backend agnostic Python API and CLI
+   - Flexible .bold[declarative] JSON schema
+   - [Openly developed on GitHub](https://github.com/scikit-hep/pyhf) and welcome contributions
+- .large[Recommended exploration for analysis]
+   - pyhf (new v0.7.0 forthcoming)
+   - cabinetry
+   - gradhep org
+]
+.kol-1-3[
+.center.width-90[![MLE_grad_map_full](figures/MLE_grad_map_full.png)]
+.center.width-100[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+]
+
+---
+class: middle
+
+.center[
+# Thanks for listening!
+# Come talk with us!
+
+.large[[www.scikit-hep.org/pyhf](https://scikit-hep.org/pyhf/)]
+]
+.grid[
+.kol-1-3.center[
+.width-90[[![scikit-hep_logo](https://scikit-hep.org/assets/images/logo.png)](https://scikit-hep.org/)]
+]
+.kol-1-3.center[
+<br>
+.width-90[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+]
+.kol-1-3.center[
+<br>
+<br>
+.width-100[[![iris-hep_logo](figures/iris-hep-4-no-long-name.png)](https://iris-hep.org/)]
+]
+]
+
+---
+class: end-slide, center
+
+Backup
+
 <!-- Finally, in thinking into the future about how pyhf can be deployed in non-traditional situations, here's an example of using pyhf natively
 in the browser.
 This slide shows the Pyodide CPython port into WebAssembly running natively in my web browser with an interface exposed by the Jupyterlite kernel.
@@ -619,57 +670,6 @@ This was all written using pyhf and simple HTML.
 .center.width-55[[![try-pyhf](figures/try-pyhf-plot.png)](https://kratsg.github.io/try-pyhf/)]
 <!--  -->
 .center[Future software/statistics training, web applications, schemea validation enabled with [Pyodide](https://pyodide.org/en/stable/) and [PyScript](https://pyscript.net/)]
-
----
-# Summary
-.kol-2-3[
-- Automatic differentiation gives a powerful tool in the form of differentiable programming
-   - Exploitation of .bold[gradient for optimization]
-   - Possible .bold[end-to-end optimization] of systems and analyses
-- .large[`pyhf`: library for modeling and .bold[accelerated] fitting that leverages automatic differentiation]
-   - reducing time to insight/inference!
-   - Hardware acceleration on GPUs and vectorized operations
-   - Backend agnostic Python API and CLI
-   - Flexible .bold[declarative] JSON schema
-   - [Openly developed on GitHub](https://github.com/scikit-hep/pyhf) and welcome contributions
-- .large[Recommended exploration for analysis]
-   - pyhf (new v0.7.0 forthcoming)
-   - cabinetry
-   - gradhep org
-]
-.kol-1-3[
-.center.width-90[![MLE_grad_map_full](figures/MLE_grad_map_full.png)]
-.center.width-100[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
-]
-
----
-class: middle
-
-.center[
-# Thanks for listening!
-# Come talk with us!
-
-.large[[www.scikit-hep.org/pyhf](https://scikit-hep.org/pyhf/)]
-]
-.grid[
-.kol-1-3.center[
-.width-90[[![scikit-hep_logo](https://scikit-hep.org/assets/images/logo.png)](https://scikit-hep.org/)]
-]
-.kol-1-3.center[
-<br>
-.width-90[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
-]
-.kol-1-3.center[
-<br>
-<br>
-.width-100[[![iris-hep_logo](figures/iris-hep-4-no-long-name.png)](https://iris-hep.org/)]
-]
-]
-
----
-class: end-slide, center
-
-Backup
 
 ---
 # Automatic Differentiation: Forward and Reverse
