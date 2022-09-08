@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     code = """\
 import micropip
-await micropip.install(["pyhf==0.6.3", "jsonschema<=4.14.0"])
+await micropip.install(["setuptools", "pyhf==0.6.3", "jsonschema<=4.14.0"])
 %matplotlib inline
 import pyhf\
 """
